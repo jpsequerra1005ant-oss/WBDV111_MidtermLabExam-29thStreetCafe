@@ -14,17 +14,15 @@
     --shadow-hover: 0 10px 15px rgba(75, 44, 32, 0.15);
 }
 
-/* ==========================================================================
-   2. GLOBAL RESET & TYPOGRAPHY BASE (CSS Box Model Compliance)
-   ========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Crucial for proper CSS Box Model sizing */
+    box-sizing: border-box; 
 }
 
 html {
-    /* Enables smooth scrolling to anchor links across the SPA */
+    
     scroll-behavior: smooth; 
 }
 
@@ -32,18 +30,18 @@ body {
     font-family: var(--font-primary);
     background-color: var(--creamy-latte);
     color: var(--espresso-brown);
-    line-height: 1.6; /* Optimizes readability of body copy */
+    line-height: 1.6; 
     -webkit-font-smoothing: antialiased;
 }
 
-/* Constrains content width on large monitors while providing mobile margins */
+
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Typographic Hierarchy Styling */
+
 h1, h2, h3, h4 {
     color: var(--espresso-brown);
     margin-bottom: 0.5rem;
@@ -56,7 +54,7 @@ a {
     transition: var(--transition-standard);
 }
 
-/* Responsive Image Handling */
+
 .responsive-image {
     max-width: 100%;
     height: auto;
@@ -64,13 +62,11 @@ a {
     border-radius: 8px;
 }
 
-/* ==========================================================================
-   3. UTILITY CLASSES & BUTTON COMPONENTS
-   ========================================================================== */
+
 .btn {
     display: inline-block;
     padding: 10px 24px;
-    border-radius: 50px; /* Pill shape standard in app-centric UI */
+    border-radius: 50px; 
     font-weight: bold;
     text-align: center;
     cursor: pointer;
@@ -85,7 +81,7 @@ a {
 
 .btn-primary:hover {
     background-color: var(--mocha-brown);
-    transform: translateY(-2px); /* Optical illusion of button press */
+    transform: translateY(-2px); 
 }
 
 .btn-secondary {
@@ -113,9 +109,7 @@ a {
     margin-bottom: 3rem;
 }
 
-/* ==========================================================================
-   4. HEADER & JAVASCRIPT-FREE NAVIGATION
-   ========================================================================== */
+
 .site-header {
     background-color: var(--creamy-latte);
     box-shadow: var(--shadow-soft);
@@ -171,12 +165,12 @@ a {
     color: var(--creamy-latte);
 }
 
-/* The core of the CSS Hack: Hide the functional checkbox entirely */
+
 .nav-checkbox {
     display: none;
 }
 
-/* Mobile Hamburger Icon structural styling (Hidden on Desktop) */
+
 .nav-toggle-label {
     display: none;
     flex-direction: column;
@@ -196,10 +190,10 @@ a {
     transition: var(--transition-standard);
 }
 
-/* Responsive Navigation Breakpoint (Mobile Execution) */
+
 @media screen and (max-width: 768px) {
    .nav-toggle-label {
-        display: flex; /* Reveal the hamburger icon on mobile */
+        display: flex; 
     }
 
    .main-navigation {
@@ -210,7 +204,7 @@ a {
         background-color: var(--creamy-latte);
         box-shadow: 0 10px 10px rgba(0,0,0,0.05);
         
-        /* CSS-Only state hiding using max-height for transitional animation */
+        
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-out;
@@ -239,29 +233,27 @@ a {
         border-radius: 0;
     }
 
-    /* THE CSS SIBLING LOGIC: When checkbox is checked, expand the menu height */
+    
    .nav-checkbox:checked ~.main-navigation {
-        max-height: 500px; /* Provides enough vertical space for content to reveal */
+        max-height: 500px; 
     }
 
-    /* Transform Hamburger into an 'X' via CSS Rotations based on checkbox state */
+    
    .nav-checkbox:checked ~.nav-toggle-label.hamburger-line:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
    .nav-checkbox:checked ~.nav-toggle-label.hamburger-line:nth-child(2) {
-        opacity: 0; /* Fade out middle bar */
+        opacity: 0; 
     }
    .nav-checkbox:checked ~.nav-toggle-label.hamburger-line:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
     }
 }
 
-/* ==========================================================================
-   5. HERO SECTION
-   ========================================================================== */
+
 .hero-section {
     padding: 10rem 0;
-    /* Utilizing a gradient background to create visual interest without image payloads */
+    
     background: linear-gradient(135deg, var(--creamy-latte) 0%, var(--cappuccino-beige) 100%);
     text-align: center;
 }
@@ -294,7 +286,7 @@ a {
 .hero-container {
   position: relative;
   width: 100%;
-  height: 500px; /* Set your desired hero height */
+  height: 500px; 
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -308,55 +300,55 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Keeps image proportions while covering the area */
-  z-index: -1;       /* Places image behind the content */
+  object-fit: cover; 
+  z-index: -1;       
 }
 
 .hero-content {
   text-align: center;
-  z-index: 1;        /* Ensures text stays on top */
+  z-index: 1;        
 }
-/* --- Hero Section & Image Sizing --- */
+
 .hero-section {
-    /* Replace this URL with your actual image */
+    
     background-image: url('../images/background.jpeg'); 
     
-    /* These three properties ensure the image shrinks and flexes perfectly */
+    
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
     
-    /* Sets a minimum height so it always looks like a hero section */
-    min-height: 100vh; /* 100% of the viewport height */
+    
+    min-height: 100vh; 
     position: relative;
     display: flex;
 }
 
-/* --- The Overlay (Darkens image so text is readable) --- */
+
 .hero-overlay {
     width: 100%;
-    /* Dark semi-transparent overlay */
+    
     background-color: rgba(88, 57, 39, 0); 
     
     
-    /* Flexbox to center the content horizontally and vertically */
+    
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem 1rem; 
 }
 
-/* --- Content Container --- */
+
 .hero-content {
     text-align: center;
-    color: #ffffff; /* White text for contrast */
-    max-width: 800px; /* Prevents text from stretching too wide on huge screens */
+    color: #ffffff; 
+    max-width: 800px; 
     width: 100%;
 }
 
-/* --- Responsive Typography --- */
+
 .hero-title {
-    /* clamp(MIN, VAL, MAX) makes font fluidly resize between mobile and desktop */
+    
     font-size: clamp(2.5rem, 5vw, 4.5rem); 
     margin-bottom: 1rem;
     font-weight: 700;
@@ -364,7 +356,7 @@ a {
 }
 
 .text-highlight {
-    color:#e9d8ba; /* Example brand color (warm orange/gold) */
+    color:#e9d8ba; 
 }
 
 .hero-subtitle {
@@ -377,11 +369,11 @@ a {
     text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.9);
 }
 
-/* --- Buttons & Flex Layout --- */
+
 .hero-actions {
     display: flex;
     justify-content: center;
-    gap: 1rem; /* Space between buttons */
+    gap: 1rem; 
 }
 
 .btn {
@@ -415,16 +407,16 @@ a {
     color: #333;
 }
 
-/* --- Mobile Responsiveness --- */
+
 @media (max-width: 480px) {
     .hero-actions {
-        /* Stacks the buttons vertically on very small mobile screens */
+        
         flex-direction: column; 
         width: 100%;
     }
     
     .btn {
-        width: 100%; /* Makes buttons full-width on mobile */
+        width: 100%; 
     }
 }
 
@@ -432,12 +424,10 @@ a {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
-/* ==========================================================================
-   6. OUR STORY SECTION (Flexbox Layout)
-   ========================================================================== */
+
 .story-section {
     padding: 5rem 0;
-    background-color: #ffffff; /* Crisp white to break the beige monotony */
+    background-color: #ffffff; 
 }
 
 .story-grid {
@@ -459,7 +449,7 @@ a {
     flex: 1;
 }
 
-/* Fallback styling if images are missing */
+
 .placeholder-img-block {
     background-color: var(--cappuccino-beige);
     height: 300px;
@@ -469,13 +459,11 @@ a {
 
 @media screen and (max-width: 768px) {
    .story-grid {
-        flex-direction: column-reverse; /* Stacks text below image on mobile */
+        flex-direction: column-reverse; 
     }
 }
 
-/* ==========================================================================
-   7. MENU SECTION (CSS Grid Layout)
-   ========================================================================== */
+
 .menu-section {
     padding: 5rem 0;
     background-color: var(--creamy-latte);
@@ -483,8 +471,7 @@ a {
 
 .product-grid {
     display: grid;
-    /* Mathematical responsive grid: Creates columns no smaller than 300px, 
-       expanding to fill available fractional space (1fr) */
+    
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
@@ -501,14 +488,14 @@ a {
 
 .product-card:hover {
     box-shadow: var(--shadow-hover);
-    transform: translateY(-5px); /* Interactive lift effect */
+    transform: translateY(-5px); 
 }
 
 .product-image {
     height: 200px;
     width: 100%;
-    object-fit: cover; /* Ensures aspect ratio is maintained without distortion */
-    background-color: var(--cappuccino-beige); /* Fallback background */
+    object-fit: cover; 
+    background-color: var(--cappuccino-beige); 
 }
 
 .product-info {
@@ -536,7 +523,7 @@ a {
     font-size: 0.95rem;
     color: var(--mocha-brown);
     margin-bottom: 1.5rem;
-    flex-grow: 1; /* Pushes meta data to the bottom of the card uniformly */
+    flex-grow: 1; 
 }
 
 .product-meta {
@@ -558,9 +545,7 @@ a {
     color: var(--mocha-brown);
 }
 
-/* ==========================================================================
-   8. APP PROMOTION SECTION
-   ========================================================================== */
+
 .app-section {
     padding: 6rem 0;
     background-color: var(--espresso-brown);
@@ -591,11 +576,9 @@ a {
     background-color: var(--chai-spice);
 }
 
-/* ==========================================================================
-   9. FOOTER SECTION
-   ========================================================================== */
+
 .site-footer {
-    background-color: #351F16; /* Subdued, darker shade of Espresso for grounding */
+    background-color: #351F16; 
     color: var(--cappuccino-beige);
     padding: 4rem 0 1rem 0;
 }
@@ -636,13 +619,13 @@ a {
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(191, 167, 138, 0.2); /* Cappuccino beige at 20% opacity */
+    border-top: 1px solid rgba(191, 167, 138, 0.2); 
     font-size: 0.89rem;
 }
 
 @media screen and (max-width: 768px) {
    .footer-grid {
-        grid-template-columns: 1fr; /* Stack footer columns on mobile */
+        grid-template-columns: 1fr; 
         text-align: center;
     }
 }
