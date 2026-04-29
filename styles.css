@@ -309,7 +309,7 @@ a {
 
 .hero-section {
     
-    background-image: url('/images/background.jpeg'); 
+    background-image: url('background.jpg'); 
     
     
     background-size: cover; 
